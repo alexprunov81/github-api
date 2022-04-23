@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "homepage": "https://github.com/alexprunov81/github-api",
   "scripts": {
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
-    "start": "webpack serve --mode=development"
+    "start": "webpack serve --mode=development",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "keywords": [
     "js",
@@ -33,6 +36,7 @@
   },
   "dependencies": {
     "core-js": "^3.22.0",
+    "gh-pages": "^3.2.3",
     "regenerator-runtime": "^0.13.9"
   }
 }

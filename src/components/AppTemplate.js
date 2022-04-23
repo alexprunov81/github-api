@@ -42,15 +42,15 @@ export class AppTemplate {
                 const parentElem = this.resultWrap.querySelectorAll(`[data-list]`)
                 parentElem.forEach(el => {
 
-                    el.addEventListener('click', (e, index) => {
+                    el.addEventListener('click', e => {
                         if (e.target.dataset.delete)
                             el.parentNode.removeChild(el)
                     })
                 })
+                this.searchInput.value = ''
             })
         })
     }
-
 
     createElement(tagName, className) {
         const element = document.createElement(tagName)
@@ -70,9 +70,5 @@ export class AppTemplate {
         const elements = this.searchWrap.querySelectorAll('[data-itemId]')
         return elements
     }
-    //
-    // getListElement() {
-    //     const elements = this.searchWrap.querySelectorAll('[data-list]')
-    //     return elements
-    // }
+
 }

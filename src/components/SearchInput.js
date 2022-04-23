@@ -1,28 +1,25 @@
-import {SelectedResult} from "@/components/SelectedResult";
-
 export class SearchInput {
     constructor(getTemplate) {
 
         this.getTemplate = getTemplate
 
         this.searchRepositories = this.debounce(this.searchRepositories, 250)
-
         this.#getRepositories()
     }
 
     debounce(fn, ms) {
         let timeout
         return function () {
-            const fnCall = () => {
-                fn.apply(this, arguments)
-            }
+            const fnCall = () => fn.apply(this, arguments)
+
             clearTimeout(timeout)
             timeout = setTimeout(fnCall, ms)
         }
     }
 
     #getRepositories() {
-        this.getTemplate.searchInput
+        this.getTemplate
+            .searchInput
             .addEventListener('keyup', this.searchRepositories.bind(this))
     }
 
